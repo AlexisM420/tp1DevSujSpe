@@ -3,17 +3,17 @@ using System.Windows.Input;
 
 namespace FileScanner.Commands
 {
-    public class DelegateCommand<T> : System.Windows.Input.ICommand
+    public class RelayCommand<T> : System.Windows.Input.ICommand
     {
         private readonly Predicate<T> _canExecute;
         private readonly Action<T> _execute;
 
-        public DelegateCommand(Action<T> execute)
+        public RelayCommand(Action<T> execute)
             : this(execute, null)
         {
         }
 
-        public DelegateCommand(Action<T> execute, Predicate<T> canExecute)
+        public RelayCommand(Action<T> execute, Predicate<T> canExecute)
         {
             _execute = execute;
             _canExecute = canExecute;

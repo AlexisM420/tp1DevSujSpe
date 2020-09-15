@@ -22,7 +22,19 @@
             <TextBlock Text="{Binding SelectedFolder}"/>
         </StatusBar>
         <Grid>
-            <ListView ItemsSource="{Binding FolderItems}"/>
+            <ListView ItemsSource="{Binding FolderItems}"
+                    ScrollViewer.VerticalScrollBarVisibility="Visible"
+                    ScrollViewer.CanContentScroll="False"
+                    >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <Image Width="15"  Source="{Binding Img}"/>
+                            <TextBlock Text="{Binding Name}"/>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
     </DockPanel>
 </Window>
